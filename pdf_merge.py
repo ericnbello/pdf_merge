@@ -1,9 +1,7 @@
-from posix import listdir
 import PyPDF2
-import sys
 import os
 
-path = input('Enter directory to search for and merge pdfs: ') # Example: ~/so-many-pdfs"
+path = input('Enter directory to search for and merge pdfs: ') # Example: ~/so-many-pdfs
 pathname = str(path)
 folder = os.listdir(path)
 writer = PyPDF2.PdfFileWriter()
@@ -22,6 +20,6 @@ for file in folder:
     
 pdf.close()
 
-outputFile = open('../combinedfiles.pdf', 'wb')
+outputFile = open('../merged_files.pdf', 'wb')
 writer.write(outputFile)
 outputFile.close()
